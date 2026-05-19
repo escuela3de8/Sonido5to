@@ -94,9 +94,15 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 
 /* DB SCALE */
 .db-scale{display:flex;flex-direction:column;gap:4px}
-.db-item{display:flex;align-items:center;gap:7px;font-size:.75rem;padding:3px 0}
+.db-item{display:flex;align-items:center;gap:7px;font-size:.75rem;padding:4px 7px;border-radius:6px;border-left:4px solid transparent}
 .db-emoji{font-size:.95rem;width:22px;text-align:center}
-.db-num{font-weight:800;color:var(--g7);width:44px;font-size:.76rem}
+.db-num{font-weight:800;width:44px;font-size:.76rem}
+.db-item.dv{background:var(--verde-l);border-left-color:var(--verde);color:var(--verde-d)}
+.db-item.dv .db-num{color:var(--verde-d)}
+.db-item.da{background:var(--amarillo-l);border-left-color:var(--amarillo);color:var(--amarillo-d)}
+.db-item.da .db-num{color:var(--amarillo-d)}
+.db-item.dr{background:var(--rojo-l);border-left-color:var(--rojo);color:var(--rojo-d)}
+.db-item.dr .db-num{color:var(--rojo-d)}
 
 /* CONTENT SECTIONS */
 .cs{padding:52px 20px}
@@ -122,6 +128,27 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 .cur-n{display:block;font-family:var(--ff);font-size:2.8rem;color:var(--g2);line-height:1;margin-bottom:7px}
 .cur-c p{font-size:.83rem;color:var(--g7);line-height:1.65}
 
+/* CARRUSEL DATOS CURIOSOS */
+.cur-titulo-fun{font-family:var(--ff);font-size:2.4rem;color:#00838f;text-align:center;margin-bottom:6px;letter-spacing:.02em;text-shadow:2px 2px 0 #fff,4px 4px 0 rgba(0,0,0,.08)}
+.cur-subt{text-align:center;font-size:1rem;color:var(--g7);margin-bottom:24px;font-weight:600}
+.carousel{position:relative;max-width:780px;margin:0 auto;padding:0 64px}
+.car-viewport{overflow:hidden;border-radius:var(--radius);background:#b3e5fc;box-shadow:var(--shadow);border:3px solid #4dd0e1}
+.car-track{display:flex;transition:transform .45s cubic-bezier(.4,.0,.2,1)}
+.car-slide{flex:0 0 100%;padding:38px 34px;display:flex;flex-direction:column;align-items:center;gap:18px;min-height:300px;text-align:center}
+.car-emoji{font-size:4.2rem;line-height:1;filter:drop-shadow(2px 3px 4px rgba(0,0,0,.15))}
+.car-text{font-size:1.05rem;color:#01579b;line-height:1.6;font-weight:600;max-width:560px}
+.car-text a{color:#0277bd;text-decoration:underline;word-break:break-word}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:#01579b;color:#fff;border:none;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:all .2s;z-index:2}
+.car-btn:hover{background:#0277bd;transform:translateY(-50%) scale(1.1)}
+.car-btn:active{transform:translateY(-50%) scale(.95)}
+.car-prev{left:0}
+.car-next{right:0}
+.car-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.car-dot{width:10px;height:10px;border-radius:50%;background:#b0bec5;border:none;cursor:pointer;padding:0;transition:all .25s}
+.car-dot.active{background:#01579b;width:26px;border-radius:5px}
+.cur-credito{text-align:center;margin-top:22px;font-size:.95rem;color:var(--g7);font-style:italic;font-weight:600}
+@media(max-width:560px){.carousel{padding:0 50px}.car-btn{width:40px;height:40px;font-size:1.2rem}.car-slide{padding:28px 18px;min-height:340px}.car-emoji{font-size:3.4rem}.car-text{font-size:.98rem}.cur-titulo-fun{font-size:1.9rem}}
+
 /* QUIENES SOMOS - layout custom */
 .qs-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:stretch}
 .qs-text{background:var(--card);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow);border:2px solid var(--g2);display:flex;flex-direction:column;justify-content:center}
@@ -132,6 +159,55 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 .qs-card img{width:100%;height:100%;object-fit:cover;display:block}
 .qs-card iframe{width:100%;height:100%;border:0;display:block;flex:1}
 @media(max-width:880px){.qs-grid{grid-template-columns:1fr}.qs-card{min-height:240px}}
+
+/* SALUD AUDITIVA - layout custom */
+.sa-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:stretch}
+.sa-main{background:var(--card);border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow);border:3px solid #0277bd;position:relative;overflow:hidden}
+.sa-main::before{content:"💬";position:absolute;top:14px;right:60px;font-size:2.6rem;opacity:.15;transform:rotate(8deg)}
+.sa-main::after{content:"💭";position:absolute;top:80px;right:18px;font-size:2.1rem;opacity:.15;transform:rotate(-6deg)}
+.sa-titulo{font-family:var(--ff);font-size:1.55rem;color:#0277bd;margin-bottom:18px;line-height:1.15;letter-spacing:.01em;position:relative;z-index:1}
+.sa-lista{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
+.sa-lista li{display:flex;gap:12px;align-items:flex-start;background:#e1f5fe;padding:14px 16px;border-radius:14px;border-left:5px solid #0288d1;font-size:.97rem;line-height:1.55;color:#01579b;font-weight:600}
+.sa-lista li::before{content:"✓";flex-shrink:0;width:28px;height:28px;background:#0288d1;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin-top:1px}
+
+.sa-side{background:var(--card);border-radius:var(--radius);padding:22px 18px;box-shadow:var(--shadow);border:2px solid var(--g2);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:14px}
+.sa-side h3{font-family:var(--ff);font-size:1.05rem;color:#0277bd;text-align:center;line-height:1.2}
+.sa-stats-num{font-family:var(--ff);font-size:2.2rem;color:#d32f2f;text-shadow:1px 2px 0 #fff,2px 3px 0 rgba(0,0,0,.08);text-align:center;line-height:1}
+.sa-stats-cap{font-size:.78rem;color:var(--g7);text-align:center;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.sa-stats-pie{width:100%;max-width:200px}
+.sa-stats-foot{font-size:.78rem;color:var(--g5);text-align:center;font-style:italic;margin-top:auto;padding-top:8px;border-top:1px dashed var(--g2);width:100%}
+@media(max-width:880px){.sa-grid{grid-template-columns:1fr}}
+
+/* QUIZ SALUD AUDITIVA */
+.quiz-wrap{margin-top:32px;background:var(--card);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow);border:3px solid #ab47bc;position:relative}
+.quiz-titulo{font-family:var(--ff);font-size:1.3rem;color:#6a1b9a;text-align:center;margin-bottom:6px;line-height:1.25}
+.quiz-sub{text-align:center;color:var(--g5);font-size:.88rem;margin-bottom:20px;font-weight:700}
+.quiz-progress{height:8px;background:#f3e5f5;border-radius:50px;overflow:hidden;margin-bottom:22px}
+.quiz-progress-bar{height:100%;background:linear-gradient(90deg,#ab47bc,#7b1fa2);width:0%;transition:width .4s;border-radius:50px}
+.quiz-q{font-size:1.08rem;font-weight:800;color:var(--g9);margin-bottom:16px;line-height:1.4}
+.quiz-q-num{display:inline-block;background:#ab47bc;color:#fff;font-family:var(--ff);font-size:.85rem;padding:3px 10px;border-radius:50px;margin-right:8px;vertical-align:middle}
+.quiz-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.quiz-opt{background:#fafafa;border:2px solid var(--g2);border-radius:12px;padding:14px 18px;text-align:left;font-family:var(--fb);font-size:.95rem;font-weight:600;color:var(--g7);cursor:pointer;transition:all .2s;display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+.quiz-opt:hover:not(:disabled){background:#f3e5f5;border-color:#ab47bc;transform:translateX(4px)}
+.quiz-opt:disabled{cursor:default}
+.quiz-opt-letra{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#e1bee7;color:#6a1b9a;display:flex;align-items:center;justify-content:center;font-family:var(--ff);font-size:.95rem;font-weight:800}
+.quiz-opt.ok{background:#e8f5e9;border-color:var(--verde);color:var(--verde-d)}
+.quiz-opt.ok .quiz-opt-letra{background:var(--verde);color:#fff}
+.quiz-opt.bad{background:#ffebee;border-color:var(--rojo);color:var(--rojo-d)}
+.quiz-opt.bad .quiz-opt-letra{background:var(--rojo);color:#fff}
+.quiz-feedback{padding:12px 16px;border-radius:10px;margin-bottom:14px;font-size:.92rem;line-height:1.5;display:none;font-weight:600}
+.quiz-feedback.show{display:block}
+.quiz-feedback.ok{background:#e8f5e9;color:var(--verde-d);border-left:5px solid var(--verde)}
+.quiz-feedback.bad{background:#ffebee;color:var(--rojo-d);border-left:5px solid var(--rojo)}
+.quiz-actions{display:flex;justify-content:center;gap:10px}
+.quiz-btn{background:#7b1fa2;color:#fff;border:none;padding:11px 24px;border-radius:50px;font-family:var(--fb);font-weight:800;font-size:.95rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.quiz-btn:hover{background:#6a1b9a;transform:translateY(-2px);box-shadow:0 4px 14px rgba(123,31,162,.3)}
+.quiz-btn:disabled{background:var(--g2);color:var(--g5);cursor:not-allowed;transform:none;box-shadow:none}
+.quiz-final{text-align:center;padding:20px 10px}
+.quiz-final-emoji{font-size:4rem;margin-bottom:10px}
+.quiz-final h3{font-family:var(--ff);font-size:1.6rem;color:#6a1b9a;margin-bottom:8px}
+.quiz-final p{color:var(--g7);font-weight:600;margin-bottom:18px;font-size:1.05rem}
+.quiz-score{display:inline-block;background:linear-gradient(135deg,#ab47bc,#7b1fa2);color:#fff;font-family:var(--ff);font-size:2rem;padding:10px 28px;border-radius:50px;margin-bottom:14px;box-shadow:0 4px 14px rgba(123,31,162,.3)}
 
 /* RECOMENDACIONES */
 .reco-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
@@ -164,11 +240,10 @@ footer .ft-sm{font-size:.72rem;color:var(--g5);margin-top:7px}
       </div>
     </div>
     <nav class="nav">
-      <a href="#quienes">¿Quiénes somos?</a>
-      <a href="#salud">Salud auditiva</a>
       <a href="#proyecto">Nuestro proyecto</a>
+      <a href="#quienes">¿Quiénes somos?</a>
+      <a href="#salud">Salud auditiva y recomendaciones</a>
       <a href="#curiosidades">Datos curiosos</a>
-      <a href="#recomendaciones">Recomendaciones</a>
     </nav>
   </div>
 </header>
@@ -337,12 +412,20 @@ footer .ft-sm{font-size:.72rem;color:var(--g5);margin-top:7px}
         <div class="card">
           <div class="card-title">🎚️ Diferentes sonidos en la vida cotidiana</div>
           <div class="db-scale">
-            <div class="db-item"><span class="db-emoji">🍃</span><span class="db-num">20 dB</span><span>Susurro</span></div>
-            <div class="db-item"><span class="db-emoji">📚</span><span class="db-num">56 dB</span><span>Clase tranquila</span></div>
-            <div class="db-item"><span class="db-emoji">💬</span><span class="db-num">60 dB</span><span>Conversación</span></div>
-            <div class="db-item"><span class="db-emoji">🚗</span><span class="db-num">80 dB</span><span>Calle con autos</span></div>
-            <div class="db-item"><span class="db-emoji">🔊</span><span class="db-num">90 dB</span><span>Moto cerca</span></div>
-            <div class="db-item"><span class="db-emoji">🎸</span><span class="db-num">110 dB</span><span>Concierto</span></div>
+            <div class="db-item dv"><span class="db-emoji">👂</span><span class="db-num">0 dB</span><span>Umbral de audición</span></div>
+            <div class="db-item dv"><span class="db-emoji">🌬️</span><span class="db-num">10 dB</span><span>Respiración tranquila, brisa entre los árboles</span></div>
+            <div class="db-item dv"><span class="db-emoji">🍃</span><span class="db-num">20 dB</span><span>Susurro, hojas, murmullo</span></div>
+            <div class="db-item dv"><span class="db-emoji">🗣️</span><span class="db-num">30 dB</span><span>Conversación en voz baja</span></div>
+            <div class="db-item dv"><span class="db-emoji">📚</span><span class="db-num">40 dB</span><span>Biblioteca</span></div>
+            <div class="db-item dv"><span class="db-emoji">💼</span><span class="db-num">50 dB</span><span>Despacho tranquilo</span></div>
+            <div class="db-item da"><span class="db-emoji">💬</span><span class="db-num">60 dB</span><span>Conversación</span></div>
+            <div class="db-item dr"><span class="db-emoji">🚗</span><span class="db-num">80 dB</span><span>Tráfico de la ciudad</span></div>
+            <div class="db-item dr"><span class="db-emoji">🧹</span><span class="db-num">90 dB</span><span>Aspiradora</span></div>
+            <div class="db-item dr"><span class="db-emoji">🏍️</span><span class="db-num">100 dB</span><span>Motocicleta con escape</span></div>
+            <div class="db-item dr"><span class="db-emoji">🎸</span><span class="db-num">120 dB</span><span>Concierto de rock</span></div>
+            <div class="db-item dr"><span class="db-emoji">🔨</span><span class="db-num">130 dB</span><span>Martillo neumático</span></div>
+            <div class="db-item dr"><span class="db-emoji">✈️</span><span class="db-num">150 dB</span><span>Despegue de avión</span></div>
+            <div class="db-item dr"><span class="db-emoji">💥</span><span class="db-num">180 dB</span><span>Explosión de un artefacto</span></div>
           </div>
         </div>
       </aside>
@@ -374,24 +457,87 @@ footer .ft-sm{font-size:.72rem;color:var(--g5);margin-top:7px}
 
 <section class="cs bg-p" id="salud">
   <div class="cs-in">
-    <h2 class="sh">👂 Salud auditiva</h2>
-    <div class="bento"></div>
+    <div class="sa-grid">
+      <div class="sa-main">
+        <h2 class="sa-titulo">👂 SALUD AUDITIVA Y RECOMENDACIONES</h2>
+        <ul class="sa-lista">
+          <li>La salud auditiva es esencial para la comunicación y la calidad de vida. Requiere protección contra ruidos fuertes, limpiezas adecuadas y revisiones periódicas.</li>
+          <li>Algunas recomendaciones clave son: limitar el volumen de los auriculares, usar tapones en entornos ruidosos y acudir al médico ante dolor o pérdida auditiva.</li>
+          <li>Según la OMS, en la Región de las Américas alrededor de <strong>217 millones de personas</strong> viven con pérdida auditiva, es decir, el <strong>21,52%</strong> de la población. Se espera que para el 2050 este número aumente a <strong>322 millones</strong>.</li>
+        </ul>
+      </div>
+      <aside class="sa-side">
+        <h3>📊 Estadísticas OMS</h3>
+        <div class="sa-stats-cap">Región de las Américas</div>
+        <svg class="sa-stats-pie" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#e0e0e0" stroke-width="18"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#d32f2f" stroke-width="18"
+                  stroke-dasharray="64.94 301.59" stroke-dashoffset="0"
+                  transform="rotate(-90 60 60)" stroke-linecap="round"/>
+          <text x="60" y="56" text-anchor="middle" font-family="'Fredoka One',cursive" font-size="18" fill="#d32f2f">21,52%</text>
+          <text x="60" y="73" text-anchor="middle" font-family="'Nunito',sans-serif" font-size="8" font-weight="700" fill="#666">con pérdida</text>
+          <text x="60" y="83" text-anchor="middle" font-family="'Nunito',sans-serif" font-size="8" font-weight="700" fill="#666">auditiva</text>
+        </svg>
+        <div class="sa-stats-num">217M</div>
+        <div class="sa-stats-cap">personas hoy</div>
+        <div style="height:1px;background:var(--g2);width:80%;margin:4px 0"></div>
+        <div class="sa-stats-num" style="color:#f57c00">322M</div>
+        <div class="sa-stats-cap">proyectadas para 2050</div>
+        <div class="sa-stats-foot">Fuente: Organización<br>Mundial de la Salud</div>
+      </aside>
+    </div>
+
+    <div class="quiz-wrap">
+      <h3 class="quiz-titulo">🎯 Ahora que sabés esta información, respondé algunas preguntas sobre el tema</h3>
+      <p class="quiz-sub">Elegí la opción que te parezca correcta</p>
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="quizBar"></div></div>
+      <div id="quizBody"></div>
+    </div>
   </div>
 </section>
 
 <section class="cs bg-m" id="curiosidades">
   <div class="cs-in">
-    <h2 class="sh">💡 Datos curiosos</h2>
-    <div class="cur-grid"></div>
+    <h2 class="cur-titulo-fun">✨ Datos Curiosos ✨</h2>
+    <p class="cur-subt">Aquí vas a encontrar información curiosa sobre el sonido</p>
+    <div class="carousel" id="curCarousel">
+      <button class="car-btn car-prev" onclick="curMove(-1)" aria-label="Anterior">‹</button>
+      <div class="car-viewport">
+        <div class="car-track" id="curTrack">
+          <div class="car-slide">
+            <div class="car-emoji">🔩⚡</div>
+            <p class="car-text">Las vibraciones son capaces de viajar más rápido en materiales densos (acero: 4512 m/s) que en el aire (343 m/s) y pueden incluso hacer levitar pequeños objetos mediante ondas ultrasónicas.</p>
+          </div>
+          <div class="car-slide">
+            <div class="car-emoji">🌊🐟</div>
+            <p class="car-text">El sonido viaja más rápido por el agua salada o agua dulce, por mayor densidad y rigidez se transmite más rápido.</p>
+          </div>
+          <div class="car-slide">
+            <div class="car-emoji">〰️💨</div>
+            <p class="car-text">El sonido es una onda mecánica que se transmite por el aire y el agua.</p>
+          </div>
+          <div class="car-slide">
+            <div class="car-emoji">🌋💥</div>
+            <p class="car-text">La erupción del volcán Krakatoa en Indonesia en 1883 emitió 188 decibeles.</p>
+          </div>
+          <div class="car-slide">
+            <div class="car-emoji">🚀🌌</div>
+            <p class="car-text">A diferencia de las películas de ciencia ficción, en el vacío del espacio nadie puede oír tus gritos. Esto se debe a que el sonido es una onda mecánica que necesita partículas (aire, agua o sólidos) para vibrar y moverse. Al no haber nada en el espacio, el sonido simplemente no puede viajar.</p>
+          </div>
+          <div class="car-slide">
+            <div class="car-emoji">🦇📡</div>
+            <p class="car-text">La ecolocalización es una capacidad sensorial que permite a ciertos animales y dispositivos localizar objetos en su entorno mediante la emisión de ondas sonoras y la interpretación de sus ecos. Si querés saber más sobre este tema, visitá <a href="https://www.nationalgeographicla.com/animales/2021/02/ecolocalizacion-el-sistema-de-sonar-de-la-naturaleza" target="_blank" rel="noopener">este sitio web</a>.</p>
+          </div>
+        </div>
+      </div>
+      <button class="car-btn car-next" onclick="curMove(1)" aria-label="Siguiente">›</button>
+      <div class="car-dots" id="curDots"></div>
+    </div>
+    <p class="cur-credito">📝 Datos investigados por Rafa, Gonza y Vera</p>
   </div>
 </section>
 
-<section class="cs bg-s" id="recomendaciones">
-  <div class="cs-in">
-    <h2 class="sh">✅ Recomendaciones</h2>
-    <div class="reco-grid"></div>
-  </div>
-</section>
+
 
 <footer>
   <div class="ft-logo">🔊 El Ruido de Mi Escuela</div>
@@ -487,6 +633,128 @@ setTimeout(()=>{
     setTimeout(()=>{r.style.filter='brightness(.82)';setTimeout(()=>r.style.filter='',280)},i*80);
   });
 },500);
+
+/* ===== CARRUSEL DATOS CURIOSOS ===== */
+var curIdx=0;
+var curTrack=document.getElementById('curTrack');
+var curSlides=curTrack?curTrack.children.length:0;
+var curDotsBox=document.getElementById('curDots');
+if(curTrack && curDotsBox){
+  for(var i=0;i<curSlides;i++){
+    (function(idx){
+      var b=document.createElement('button');
+      b.className='car-dot'+(idx===0?' active':'');
+      b.setAttribute('aria-label','Dato '+(idx+1));
+      b.onclick=function(){curGo(idx)};
+      curDotsBox.appendChild(b);
+    })(i);
+  }
+}
+function curGo(n){
+  curIdx=(n+curSlides)%curSlides;
+  curTrack.style.transform='translateX('+(-curIdx*100)+'%)';
+  var dots=curDotsBox.querySelectorAll('.car-dot');
+  dots.forEach(function(d,i){d.classList.toggle('active',i===curIdx)});
+}
+function curMove(dir){curGo(curIdx+dir)}
+/* navegación por teclado cuando el carrusel está enfocado */
+document.addEventListener('keydown',function(e){
+  var sec=document.getElementById('curiosidades');
+  if(!sec)return;
+  var rect=sec.getBoundingClientRect();
+  if(rect.top<window.innerHeight*.7 && rect.bottom>window.innerHeight*.3){
+    if(e.key==='ArrowLeft')curMove(-1);
+    if(e.key==='ArrowRight')curMove(1);
+  }
+});
+
+/* ===== QUIZ SALUD AUDITIVA ===== */
+var QUIZ=[
+  {
+    q:'¿En qué afecta la contaminación sonora a las personas?',
+    opts:[
+      'Solo molesta un poco cuando hay mucho ruido pero no causa ningún daño real',
+      'Únicamente afecta a personas mayores o con problemas previos de audición',
+      'Puede causar pérdida auditiva, estrés, problemas de concentración y dificultades para dormir',
+      'Solamente afecta el oído pero no influye en otras partes del cuerpo'
+    ],
+    correct:2,
+    explain:'La contaminación sonora afecta al cuerpo de muchas maneras: daña el oído, sube el estrés, dificulta concentrarse en clase y altera el sueño.'
+  },
+  {
+    q:'¿De qué manera podés cuidar tu salud auditiva?',
+    opts:[
+      'Escuchando música siempre al máximo volumen para entrenar el oído',
+      'Limitando el volumen de los auriculares, usando tapones en lugares ruidosos y consultando al médico si duele el oído',
+      'Limpiando profundamente el oído con hisopos todos los días',
+      'Tapándose los oídos con las manos cuando hay ruido fuerte'
+    ],
+    correct:1,
+    explain:'Las recomendaciones clave de la OMS son: bajar el volumen de los auriculares, usar tapones en entornos ruidosos y acudir al médico ante dolor o pérdida auditiva.'
+  },
+  {
+    q:'Según la OMS, ¿cuántas personas podrían tener daño auditivo en 2050?',
+    opts:[
+      'Alrededor de 50 millones de personas',
+      'Cerca de 100 millones de personas',
+      'Aproximadamente 217 millones de personas',
+      'Cerca de 322 millones de personas'
+    ],
+    correct:3,
+    explain:'Hoy son 217 millones en la Región de las Américas. La OMS proyecta que para 2050 ese número aumentará a 322 millones.'
+  }
+];
+var qIdx=0,qScore=0,qLocked=false;
+function quizRender(){
+  var body=document.getElementById('quizBody');
+  var bar=document.getElementById('quizBar');
+  if(!body)return;
+  if(qIdx>=QUIZ.length){
+    var pct=Math.round(qScore/QUIZ.length*100);
+    var emo='🎉',msg='¡Excelente! Sabés mucho sobre salud auditiva.';
+    if(pct<100 && pct>=66){emo='👏';msg='¡Muy bien! Aprendiste lo más importante.'}
+    else if(pct<66 && pct>=33){emo='💪';msg='¡Buen intento! Repasá la sección y volvé a probar.'}
+    else if(pct<33){emo='📚';msg='Volvé a leer las recomendaciones y probá de nuevo.'}
+    bar.style.width='100%';
+    body.innerHTML='<div class="quiz-final"><div class="quiz-final-emoji">'+emo+'</div><h3>¡Terminaste el quiz!</h3><div class="quiz-score">'+qScore+' / '+QUIZ.length+'</div><p>'+msg+'</p><button class="quiz-btn" onclick="quizReset()">🔄 Volver a empezar</button></div>';
+    return;
+  }
+  bar.style.width=(qIdx/QUIZ.length*100)+'%';
+  var qd=QUIZ[qIdx];
+  var letras=['A','B','C','D'];
+  var html='<div class="quiz-q"><span class="quiz-q-num">'+(qIdx+1)+'/'+QUIZ.length+'</span>'+qd.q+'</div><div class="quiz-opts">';
+  for(var i=0;i<qd.opts.length;i++){
+    html+='<button class="quiz-opt" data-i="'+i+'" onclick="quizPick('+i+')"><span class="quiz-opt-letra">'+letras[i]+'</span><span>'+qd.opts[i]+'</span></button>';
+  }
+  html+='</div><div class="quiz-feedback" id="quizFb"></div><div class="quiz-actions"><button class="quiz-btn" id="quizNext" onclick="quizNext()" disabled>Siguiente ›</button></div>';
+  body.innerHTML=html;
+  qLocked=false;
+}
+function quizPick(i){
+  if(qLocked)return;
+  qLocked=true;
+  var qd=QUIZ[qIdx];
+  var opts=document.querySelectorAll('.quiz-opt');
+  var fb=document.getElementById('quizFb');
+  var nx=document.getElementById('quizNext');
+  opts.forEach(function(o){o.disabled=true});
+  if(i===qd.correct){
+    opts[i].classList.add('ok');
+    qScore++;
+    fb.className='quiz-feedback show ok';
+    fb.innerHTML='✅ <strong>¡Correcto!</strong> '+qd.explain;
+  }else{
+    opts[i].classList.add('bad');
+    opts[qd.correct].classList.add('ok');
+    fb.className='quiz-feedback show bad';
+    fb.innerHTML='❌ <strong>No es esa.</strong> '+qd.explain;
+  }
+  nx.disabled=false;
+  if(qIdx===QUIZ.length-1)nx.innerHTML='Ver resultado 🏆';
+}
+function quizNext(){qIdx++;quizRender()}
+function quizReset(){qIdx=0;qScore=0;qLocked=false;quizRender()}
+quizRender();
 </script>
 </body>
 </html>
