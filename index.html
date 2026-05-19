@@ -163,12 +163,12 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 /* SALUD AUDITIVA - layout custom */
 .sa-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:stretch}
 .sa-main{background:var(--card);border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow);border:3px solid #0277bd;position:relative;overflow:hidden}
-.sa-main::before{content:"💬";position:absolute;top:14px;right:60px;font-size:2.6rem;opacity:.15;transform:rotate(8deg)}
-.sa-main::after{content:"💭";position:absolute;top:80px;right:18px;font-size:2.1rem;opacity:.15;transform:rotate(-6deg)}
+.sa-main::before{content:"💬";position:absolute;top:10px;right:20px;font-size:2.2rem;opacity:.12;transform:rotate(8deg);pointer-events:none}
+.sa-main::after{content:"💭";position:absolute;top:8px;right:70px;font-size:1.7rem;opacity:.12;transform:rotate(-6deg);pointer-events:none}
 .sa-titulo{font-family:var(--ff);font-size:1.55rem;color:#0277bd;margin-bottom:18px;line-height:1.15;letter-spacing:.01em;position:relative;z-index:1}
-.sa-lista{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
-.sa-lista li{display:flex;gap:12px;align-items:flex-start;background:#e1f5fe;padding:14px 16px;border-radius:14px;border-left:5px solid #0288d1;font-size:.97rem;line-height:1.55;color:#01579b;font-weight:600}
-.sa-lista li::before{content:"✓";flex-shrink:0;width:28px;height:28px;background:#0288d1;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin-top:1px}
+.sa-lista{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;position:relative;z-index:1;width:100%}
+.sa-lista li{background:#e1f5fe;padding:14px 18px;border-radius:14px;border-left:5px solid #0288d1;font-size:.97rem;line-height:1.55;color:#01579b;font-weight:600;width:100%;box-sizing:border-box;position:relative;padding-left:52px}
+.sa-lista li::before{content:"✓";position:absolute;left:12px;top:13px;width:28px;height:28px;background:#0288d1;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem}
 
 .sa-side{background:var(--card);border-radius:var(--radius);padding:22px 18px;box-shadow:var(--shadow);border:2px solid var(--g2);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:14px}
 .sa-side h3{font-family:var(--ff);font-size:1.05rem;color:#0277bd;text-align:center;line-height:1.2}
@@ -463,7 +463,7 @@ footer .ft-sm{font-size:.72rem;color:var(--g5);margin-top:7px}
         <ul class="sa-lista">
           <li>La salud auditiva es esencial para la comunicación y la calidad de vida. Requiere protección contra ruidos fuertes, limpiezas adecuadas y revisiones periódicas.</li>
           <li>Algunas recomendaciones clave son: limitar el volumen de los auriculares, usar tapones en entornos ruidosos y acudir al médico ante dolor o pérdida auditiva.</li>
-          <li>Según la OMS, en la Región de las Américas alrededor de <strong>217 millones de personas</strong> viven con pérdida auditiva, es decir, el <strong>21,52%</strong> de la población. Se espera que para el 2050 este número aumente a <strong>322 millones</strong>.</li>
+          <li>Según la OMS, en la Región de las Américas alrededor de 217 millones de personas viven con pérdida auditiva, es decir, el 21,52% de la población. Se espera que para el 2050 este número aumente a 322 millones.</li>
         </ul>
       </div>
       <aside class="sa-side">
